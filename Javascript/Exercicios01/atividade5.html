@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Triângulo</title>
+</head>
+<body>
+    <h1>Verificador de Triângulo</h1>
+
+    <label for="ladoA">Lado A</label>
+    <input id="ladoA" type="number" placeholder="Ex: 3">
+
+    <label for="ladoB">Lado B</label>
+    <input id="ladoB" type="number" placeholder="Ex: 4">
+
+    <label for="ladoC">Lado C</label>
+    <input id="ladoC" type="number" placeholder="Ex: 5">
+
+    <button onclick="verificar()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificar() {
+            let a = Number(document.getElementById("ladoA").value);
+            let b = Number(document.getElementById("ladoB").value);
+            let c = Number(document.getElementById("ladoC").value);
+
+            let resultado;
+
+            if (a + b > c && a + c > b && b + c > a) {
+                if (a === b && b === c) {
+                    resultado = "Triângulo equilátero";
+                } else if (a === b || b === c || a === c) {
+                    resultado = "Triângulo isósceles";
+                } else {
+                    resultado = "Triângulo escaleno";
+                }
+            } else {
+                resultado = "Estes lados não formam um triângulo.";
+            }
+
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+</html>

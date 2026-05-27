@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio Buttons - Tipo de Pessoa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Tipo de Cadastro</h1>
+
+    <form id="meuForm">
+      <!-- Grupo de radios: mesmo name="tipo" -->
+      <div class="grupo-radio">
+        <label>
+          <input type="radio" name="tipo" value="fisica" checked>
+          Pessoa Fisica
+        </label>
+        <label>
+          <input type="radio" name="tipo" value="juridica">
+          Pessoa Juridica
+        </label>
+      </div>
+
+      <!-- Campo que vai mudar conforme o radio selecionado -->
+      <div class="campo">
+        <label for="documento">Documento:</label>
+        <input type="text" id="documento" name="documento" placeholder="CPF">
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <!-- Script no final do body: garante que o DOM ja foi carregado -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Sistema de Login</h1>
+
+    <label for="usuario">Usuário</label>
+    <input id="usuario" type="text" placeholder="Digite o usuário">
+
+    <label for="senha">Senha</label>
+    <input id="senha" type="password" placeholder="Digite a senha">
+
+    <button onclick="entrar()">Entrar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function entrar() {
+            let usuarioCorreto = "marco";
+            let senhaCorreta = "1234";
+
+            let usuario = document.getElementById("usuario").value;
+            let senha = document.getElementById("senha").value;
+
+            if (usuario === usuarioCorreto && senha === senhaCorreta) {
+                document.getElementById("resultado").textContent = "Login realizado com sucesso!";
+            } else {
+                document.getElementById("resultado").textContent = "Usuário ou senha incorretos.";
+            }
+        }
+    </script>
+</body>
+</html>

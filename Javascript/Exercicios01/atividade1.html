@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #1a1a1a;
+            color: #e8e8e8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: #242424;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 420px;
+            border: 1px solid #333;
+        }
+        h1 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 0 0 1.5rem;
+        }
+        label {
+            display: block;
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 6px;
+        }
+        input {
+            width: 100%;
+            padding: 10px 12px;
+            background: #1a1a1a;
+            border: 1px solid #3a3a3a;
+            border-radius: 8px;
+            color: #e8e8e8;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        input:focus {
+            outline: none;
+            border-color: #4a90d9;
+        }
+        button {
+            width: 100%;
+            padding: 11px;
+            background: #4a90d9;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        button:hover { background: #3a7bc0; }
+        button:active { transform: scale(0.98); }
+        #caixaResultado {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            display: none;
+        }
+        #caixaResultado .rotulo {
+            font-size: 0.75rem;
+            color: #777;
+            display: block;
+            margin-bottom: 6px;
+        }
+        #valorImc {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        #classificacao {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Calculadora de IMC</h1>
+
+        <label for="peso">Peso (kg)</label>
+        <input id="peso" type="number" placeholder="Ex: 70">
+
+        <label for="altura">Altura (m)</label>
+        <input id="altura" type="number" placeholder="Ex: 1.75">
+
+        <button onclick="calcularIMC()">Calcular</button>
+
+        <div id="caixaResultado">
+            <span class="rotulo">Resultado</span>
+            <span id="valorImc"></span>
+            <span id="classificacao"></span>
+        </div>
+    </div>
+
+    <script>
+        function calcularIMC() {
+            let peso = Number(document.getElementById("peso").value);
+            let altura = Number(document.getElementById("altura").value);
+            let imc = peso / (altura * altura);
+
+            if (!peso || !altura) {
+                document.getElementById("caixaResultado").style.display = "none";
+                return;
+            }
+
+            let classificacao, corFundo, corTexto;
+            if (imc < 18.5) {
+                classificacao = "abaixo do peso"; corFundo = "#1e3a5f"; corTexto = "#a8d0f5";
+            } else if (imc < 25) {
+                classificacao = "normal"; corFundo = "#1e4538"; corTexto = "#8fe3c4";
+            } else if (imc < 30) {
+                classificacao = "sobrepeso"; corFundo = "#4a3a1a"; corTexto = "#f5cf8f";
+            } else {
+                classificacao = "obesidade"; corFundo = "#4a1e1e"; corTexto = "#f5a8a8";
+            }
+
+            document.getElementById("valorImc").textContent = "IMC: " + imc.toFixed(1);
+            let tag = document.getElementById("classificacao");
+            tag.textContent = classificacao;
+            tag.style.background = corFundo;
+            tag.style.color = corTexto;
+            document.getElementById("caixaResultado").style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+:root {
+    --roxo:       #6B21AB;
+    --roxo-light: #9333EA;
+    --roxo-pale:  #b2a8b8;
+    --img-size:   90px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 60%, #0f0f1a 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 24px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+header h1 span {
+    color: var(--roxo-light);
+}
+
+header p {
+    margin-top: 8px;
+    color: var(--roxo-pale);
+    font-size: .95rem;
+    font-weight: 300;
+}
+
+.table-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(255, 255, 255, .04);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 255, 255, .07);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr {
+    background: linear-gradient(90deg, var(--roxo) 0%, var(--roxo-light) 100%);
+}
+
+th {
+    padding: 16px 20px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+td {
+    padding: 14px 20px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
+    color: #ffffff;
+    font-size: .92rem;
+}
+
+tr:nth-child(even) td {
+    background: rgba(107, 33, 171, .12);
+}
+
+tbody tr:hover td {
+    background: rgba(147, 51, 234, .2);
+}
+
+td.col-id {
+    font-size: .78rem;
+    color: var(--roxo-pale);
+    letter-spacing: 1px;
+}
+
+td.col-desc {
+    text-align: left;
+}
+
+td.col-desc strong {
+    display: block;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+td.col-desc span {
+    font-size: .78rem;
+    color: var(--roxo-pale);
+    font-weight: 300;
+}
+
+td.col-preco {
+    font-weight: 500;
+    color: #c084fc;
+    font-size: 1rem;
+}
+
+/* Padronização das imagens via CSS */
+td.col-img img {
+    width: var(--img-size);
+    height: var(--img-size);
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid rgba(147, 51, 234, .4);
+    transition: transform .25s, box-shadow .25s;
+}
+
+tbody tr:hover td.col-img img {
+    transform: scale(1.08);
+    box-shadow: 0 8px 24px rgba(147, 51, 234, .45);
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: .7rem;
+    font-weight: 500;
+    letter-spacing: .6px;
+    margin-top: 4px;
+    background: rgba(147, 51, 234, .25);
+    color: #d8b4fe;
+}
+
+footer {
+    margin-top: 28px;
+    color: rgba(255, 255, 255, .25);
+    font-size: .78rem;
+}

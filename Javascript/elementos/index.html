@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .escondido {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="principal">principal</h1>
+
+    <h2 class="secundario">1</h2>
+    <h2 class="secundario">2</h2>
+    <h2 class="secundario">3</h2>
+    <h2 class="secundario">4</h2>
+    <h2 class="secundario">5</h2>
+
+    <button onclick="mudarCor()">Mudar cor</button>
+    <button onclick="toggleVisibility()">Esconder/Mostrar</button>
+
+    <h3>TEXTO PARA ESCONDER</h3>
+
+    <script>
+        let principal = document.getElementById("principal");
+        let secundario = document.getElementsByClassName("secundario");
+
+        secundario[1].innerHTML = '<em>Texto em itálico</em>';
+
+        console.log(typeof secundario);
+        console.log(secundario[1]);
+
+        function mudarCor() {
+            principal.style.color = 'red';
+        }
+
+        function toggleVisibility() {
+            let texto = document.getElementsByTagName('h3');
+            texto[0].classlist.toggle('escondido');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Validacao de Senha em Tempo Real</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Criar Senha</h1>
+
+    <form id="meuForm">
+      <div class="campo">
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="Digite a senha">
+      </div>
+
+      <div class="campo">
+        <label for="confirmarSenha">Confirmar senha:</label>
+        <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Repita a senha">
+        <span id="msgSenha" class="msg"></span>
+      </div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </main>
+
+  <!-- Script no final do body: garante que o DOM ja foi carregado -->
+  <script src="script.js"></script>
+</body>
+</html>

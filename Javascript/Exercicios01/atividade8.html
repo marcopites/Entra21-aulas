@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedra, Papel ou Tesoura</title>
+</head>
+<body>
+    <h1>Pedra, Papel ou Tesoura</h1>
+
+    <label for="escolha">Sua escolha</label>
+    <select id="escolha">
+        <option value="pedra">Pedra</option>
+        <option value="papel">Papel</option>
+        <option value="tesoura">Tesoura</option>
+    </select>
+
+    <button onclick="jogar()">Jogar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function jogar() {
+            let opcoes = ["pedra", "papel", "tesoura"];
+
+            let usuario = document.getElementById("escolha").value;
+
+            let indice = Math.floor(Math.random() * 3);
+            let computador = opcoes[indice];
+
+            let resultado;
+
+            if (usuario === computador) {
+                resultado = "Empate!";
+            } else if (
+                (usuario === "pedra" && computador === "tesoura") ||
+                (usuario === "papel" && computador === "pedra") ||
+                (usuario === "tesoura" && computador === "papel")
+            ) {
+                resultado = "Você venceu!";
+            } else {
+                resultado = "Você perdeu!";
+            }
+
+            document.getElementById("resultado").textContent =
+                "Você: " + usuario + " | Computador: " + computador + " — " + resultado;
+        }
+    </script>
+</body>
+</html>

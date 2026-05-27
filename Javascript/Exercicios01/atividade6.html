@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+</head>
+<body>
+    <h1>Contagem Regressiva</h1>
+
+    <label for="numero">Número inicial</label>
+    <input id="numero" type="number" placeholder="Ex: 10">
+
+    <button onclick="contar()">Iniciar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function contar() {
+            let numero = Number(document.getElementById("numero").value);
+
+            let texto = "";
+            for (let i = numero; i >= 0; i--) {
+                texto = texto + i + " ";
+            }
+
+            document.getElementById("resultado").textContent = texto;
+        }
+    </script>
+</body>
+</html>

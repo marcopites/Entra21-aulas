@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Cadastro - Integracao</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Cadastro</h1>
+
+    <form id="meuForm">
+      <!-- Campo Nome -->
+      <div class="campo">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+        <span id="erroNome" class="msg-erro"></span>
+      </div>
+
+      <!-- Campo Email -->
+      <div class="campo">
+        <label for="email">E-mail:</label>
+        <input type="text" id="email" name="email" placeholder="Digite seu e-mail">
+        <span id="erroEmail" class="msg-erro"></span>
+      </div>
+
+      <!-- Campo Senha -->
+      <div class="campo">
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" placeholder="Minimo 6 caracteres">
+        <span id="erroSenha" class="msg-erro"></span>
+      </div>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </main>
+
+  <!-- Script no final do body: garante que o DOM ja foi carregado -->
+  <script src="script.js"></script>
+</body>
+</html>

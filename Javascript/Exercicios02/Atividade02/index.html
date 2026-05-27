@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 02 - Campo Obrigatório</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Exercício 02: Campo Obrigatório</h1>
+
+    <form id="meuForm">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome...">
+
+      <!-- Elemento que vai receber a mensagem de erro -->
+      <span id="erroNome" class="msg-erro"></span>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <!-- Script no final do body: garante que o DOM ja foi carregado -->
+  <script src="script.js"></script>
+</body>
+</html>
